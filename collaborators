@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<!-- 모바일 화면 인식을 위한 뷰포트 설정 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collaborating Artists</title>
+<style>
+:root {
+  --pink: #fcbccb;
+  --pink-bg: #fff8fa;
+  --purple: #463b64;
+  --text: #333333;
+  --gray-text: #777777;
+}
+
+html, body {
+  margin: 0; padding: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: #ffffff; color: var(--text);
+  overflow-x: hidden;
+}
+
+/* 전체 감싸는 컨테이너 */
+.coop-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 💡 반응형 그리드: 기본 PC에서는 2열, 화면이 좁아지면 자동으로 1열 정렬 */
+.coop-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* 개별 작가 카드 디자인 */
+.artist-card {
+  border: 2px solid var(--purple);
+  border-radius: 20px;
+  padding: 10px;
+  background: var(--pink-bg);
+  box-sizing: border-box;
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: block;
+}
+
+.artist-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(70, 59, 100, 0.1);
+}
+
+/* 안쪽 핑크색 점선 박스 */
+.card-inner {
+  border: 2px dashed var(--pink);
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 작가님 포트폴리오 이미지 영역 */
+.image-box {
+  width: 100%;
+  aspect-ratio: 16 / 7.5; /* 이미지 비율에 맞춤 */
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 하단 프로필 및 설명 구역 */
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 4px;
+}
+
+.profile-icon {
+  width: 20px;          
+  height: 20px;         
+  border-radius: 50%;   
+  object-fit: cover;    
+  border: 1px solid #ddd;
+}
+
+.artist-info {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--purple);
+}
+
+/* 하이라이트 문자 (핑크색 이름) */
+.artist-name {
+  color: #d3749d;
+  font-weight: 700;
+}
+
+/* 비공개 상태 안내 텍스트 스타일 */
+.private-text {
+  color: var(--gray-text);
+  font-weight: normal;
+}
+
+/* 📱 모바일 반응형 수치 조정 (화면 폭이 768px 이하일 때) */
+@media (max-width: 768px) {
+  .coop-grid {
+    grid-template-columns: 1fr; /* 1열로 변경 */
+    gap: 15px;
+  }
+  .coop-container {
+    padding: 10px;
+  }
+  .artist-info {
+    font-size: 13px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="coop-container">
+  <div class="coop-grid">
+
+    <!-- 1. 고리 작가님 -->
+    <a href="https://artmug.kr/index.php?channel=view&uid=30424" target="_blank" class="artist-card">
+      <div class="card-inner">
+        <div class="image-box">
+          <img src="images/고리님2.png" alt="고리">
+        </div>
+        <div class="profile-box">
+          <img src="images/고리.png" class="profile-icon">
+          <div class="artist-info"><span class="artist-name">고리</span> | LD ° 리깅 5만원 할인</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 2. WATO 작가님 -->
+    <a href="https://artmug.kr/index.php?channel=view&uid=44509" target="_blank" class="artist-card">
+      <div class="card-inner">
+        <div class="image-box">
+          <img src="images/와토님.png" alt="WATO">
+        </div>
+        <div class="profile-box">
+          <img src="images/와토2.png" class="profile-icon" onerror="this.style.display='none'">
+          <div class="artist-info"><span class="artist-name">WATO</span> | LD ° 리깅 5만원 할인</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 3. 서우리 작가님 -->
+    <a href="https://artmug.kr/index.php?channel=view&uid=25823" target="_blank" class="artist-card">
+      <div class="card-inner">
+        <div class="image-box">
+          <img src="images/서우리님.png" alt="서우리">
+        </div>
+        <div class="profile-box">
+          <img src="images/서우리.png" class="profile-icon" onerror="this.style.display='none'">
+          <div class="artist-info"><span class="artist-name">서우리</span> | LD ° 리깅 5만원 할인</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 4. 계쥬 작가님 (잠시 비공개) -->
+    <a href="https://artmug.kr/index.php?channel=view&uid=46960" target="_blank" class="artist-card">
+      <div class="card-inner">
+        <div class="image-box">
+          <img src="images/개쥬님.png" alt="개쥬">
+        </div>
+        <div class="profile-box">
+          <img src="images/개쥬.png" class="profile-icon" onerror="this.style.display='none'">
+          <div class="artist-info"><span class="artist-name">개쥬</span> <span class="private-text">° 잠시 비공개중입니다.</span></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 5. 카카 작가님 -->
+    <a href="https://artmug.kr/index.php?channel=view&uid=47366" target="_blank" class="artist-card">
+      <div class="card-inner">
+        <div class="image-box">
+          <img src="images/카카님.png" alt="카카">
+        </div>
+        <div class="profile-box">
+          <img src="images/카카.png" class="profile-icon" onerror="this.style.display='none'">
+          <div class="artist-info"><span class="artist-name">카카</span> | LD ° 리깅 5만원 할인</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 6. 먀온 작가님 (잠시 비공개) -->
+    <a href="" target="_blank" class="artist-card">
+      <div class="card-inner">
+        <div class="image-box">
+          <img src="images/먀온님.png" alt="먀온">
+        </div>
+        <div class="profile-box">
+          <img src="images/먀온.png" class="profile-icon" onerror="this.style.display='none'">
+          <div class="artist-info"><span class="artist-name">먀온</span>° 잠시 비공개중입니다.</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 7. 양초 작가님 -->
+    <a href="https://artmug.kr/index.php?channel=view&uid=47209" target="_blank" class="artist-card">
+      <div class="card-inner">
+        <div class="image-box">
+          <img src="images/양초님.png" alt="양초">
+        </div>
+        <div class="profile-box">
+          <img src="images/양초2.png" class="profile-icon" onerror="this.style.display='none'">
+          <div class="artist-info"><span class="artist-name">양초</span> | LD ° 리깅 5만원 할인</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 8. DAMA 작가님 -->
+    <a href="https://artmug.kr/index.php?channel=view&uid=17803" target="_blank" class="artist-card">
+      <div class="card-inner">
+        <div class="image-box">
+          <img src="images/다마님.png" alt="DAMA">
+        </div>
+        <div class="profile-box">
+          <img src="images/다마.png" class="profile-icon" onerror="this.style.display='none'">
+          <div class="artist-info"><span class="artist-name">DAMA</span> | LD ° 리깅 5만원 할인</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 9. 혜야 작가님 -->
+    <a href="https://artmug.kr/index.php?channel=view&uid=43555" target="_blank" class="artist-card">
+      <div class="card-inner">
+        <div class="image-box">
+          <img src="images/혜야님.png" alt="혜야">
+        </div>
+        <div class="profile-box">
+          <img src="images/혜야.png" class="profile-icon" onerror="this.style.display='none'">
+          <div class="artist-info"><span class="artist-name">혜야</span> | SD ° 리깅 5만원 할인</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 10. 익명 작가님 -->
+    <a href="https://artmug.kr/index.php?channel=view&uid=51627" target="_blank" class="artist-card">
+      <div class="card-inner">
+        <div class="image-box">
+          <img src="images/익명님.png" alt="익명">
+        </div>
+        <div class="profile-box">
+          <img src="images/익명.png" class="profile-icon" onerror="this.style.display='none'">
+          <div class="artist-info"><span class="artist-name">익명</span> | SD ° 리깅 5만원 할인</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 11. 몬드 작가님 (잠시 비공개) -->
+    <div class="artist-card">
+      <div class="card-inner">
+        <div class="image-box">
+          <img src="images/몬드님.png" alt="몬드">
+        </div>
+        <div class="profile-box">
+          <img src="images/몬드.png" class="profile-icon" onerror="this.style.display='none'">
+          <div class="artist-info"><span class="artist-name">몬드</span> | 월페이퍼 ° 리깅 3만원 할인 <span class="private-text">° 잠시 비공개중입니다.</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  function sendHeight() {
+    const height = document.body.scrollHeight;
+    parent.postMessage({ type: "coopHeight", value: height }, "*");
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  setInterval(sendHeight, 1000);
+})();
+</script>
+
+</body>
+</html>
