@@ -2,7 +2,6 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<!-- 모바일 화면 인식을 위한 뷰포트 설정 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Collaborating Artists</title>
 <style>
@@ -25,8 +24,19 @@ html, body {
 .coop-container {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px 20px; /* 상단 여백 확보 */
   box-sizing: border-box;
+}
+
+/* [추가] 타 섹션과 완벽히 통일된 대제목 스타일 */
+.section-title {
+  color: var(--purple);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--purple);
+  padding-bottom: 10px;
+  text-align: left;
 }
 
 /* 💡 반응형 그리드: 기본 PC에서는 2열, 화면이 좁아지면 자동으로 1열 정렬 */
@@ -117,6 +127,10 @@ html, body {
 
 /* 📱 모바일 반응형 수치 조정 (화면 폭이 768px 이하일 때) */
 @media (max-width: 768px) {
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
   .coop-grid {
     grid-template-columns: 1fr; /* 1열로 변경 */
     gap: 15px;
@@ -133,9 +147,10 @@ html, body {
 <body>
 
 <div class="coop-container">
+  <div class="section-title">✦ COLLABORATORS ✦</div>
+
   <div class="coop-grid">
 
-    <!-- 1. 고리 작가님 -->
     <a href="https://artmug.kr/index.php?channel=view&uid=30424" target="_blank" class="artist-card">
       <div class="card-inner">
         <div class="image-box">
@@ -148,7 +163,6 @@ html, body {
       </div>
     </a>
 
-    <!-- 2. WATO 작가님 -->
     <a href="https://artmug.kr/index.php?channel=view&uid=44509" target="_blank" class="artist-card">
       <div class="card-inner">
         <div class="image-box">
@@ -161,7 +175,6 @@ html, body {
       </div>
     </a>
 
-    <!-- 3. 서우리 작가님 -->
     <a href="https://artmug.kr/index.php?channel=view&uid=25823" target="_blank" class="artist-card">
       <div class="card-inner">
         <div class="image-box">
@@ -174,7 +187,6 @@ html, body {
       </div>
     </a>
 
-    <!-- 4. 계쥬 작가님 (잠시 비공개) -->
     <a href="https://artmug.kr/index.php?channel=view&uid=46960" target="_blank" class="artist-card">
       <div class="card-inner">
         <div class="image-box">
@@ -187,7 +199,6 @@ html, body {
       </div>
     </a>
 
-    <!-- 5. 카카 작가님 -->
     <a href="https://artmug.kr/index.php?channel=view&uid=47366" target="_blank" class="artist-card">
       <div class="card-inner">
         <div class="image-box">
@@ -200,7 +211,6 @@ html, body {
       </div>
     </a>
 
-    <!-- 6. 먀온 작가님 (잠시 비공개) -->
     <div class="artist-card private-card"> 
       <div class="card-inner">
         <div class="image-box">
@@ -213,7 +223,6 @@ html, body {
       </div>
     </div>
 
-    <!-- 7. 양초 작가님 -->
     <a href="https://artmug.kr/index.php?channel=view&uid=47209" target="_blank" class="artist-card">
       <div class="card-inner">
         <div class="image-box">
@@ -226,7 +235,6 @@ html, body {
       </div>
     </a>
 
-    <!-- 8. DAMA 작가님 -->
     <a href="https://artmug.kr/index.php?channel=view&uid=17803" target="_blank" class="artist-card">
       <div class="card-inner">
         <div class="image-box">
@@ -239,7 +247,6 @@ html, body {
       </div>
     </a>
 
-    <!-- 9. 혜야 작가님 -->
     <a href="https://artmug.kr/index.php?channel=view&uid=43555" target="_blank" class="artist-card">
       <div class="card-inner">
         <div class="image-box">
@@ -252,7 +259,6 @@ html, body {
       </div>
     </a>
 
-    <!-- 10. 익명 작가님 -->
     <a href="https://artmug.kr/index.php?channel=view&uid=51627" target="_blank" class="artist-card">
       <div class="card-inner">
         <div class="image-box">
@@ -265,7 +271,6 @@ html, body {
       </div>
     </a>
 
-    <!-- 11. 몬드 작가님 (잠시 비공개) -->
     <div class="artist-card">
       <div class="card-inner">
         <div class="image-box">
