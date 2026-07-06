@@ -24,11 +24,11 @@ html, body {
 .coop-container {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 40px 20px; /* 상단 여백 확보 */
+  padding: 40px 20px;
   box-sizing: border-box;
 }
 
-/* 타 섹션과 완벽히 통일된 대제목 스타일 */
+/* 대제목 스타일 */
 .section-title {
   color: var(--purple);
   font-size: 28px;
@@ -39,7 +39,7 @@ html, body {
   text-align: left;
 }
 
-/* 💡 반응형 그리드: 기본 PC에서는 2열, 화면이 좁아지면 자동으로 1열 정렬 */
+/* 반응형 그리드 */
 .coop-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -53,7 +53,7 @@ html, body {
   padding: 10px;
   background: var(--pink-bg);
   box-sizing: border-box;
-  text-decoration: none; /* 링크 밑줄 제거 */
+  text-decoration: none;
   color: inherit;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: block;
@@ -78,7 +78,7 @@ html, body {
 /* 작가님 포트폴리오 이미지 영역 */
 .image-box {
   width: 100%;
-  aspect-ratio: 16 / 7.5; /* 이미지 비율에 맞춤 */
+  aspect-ratio: 16 / 7.5;
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid #eee;
@@ -105,6 +105,7 @@ html, body {
   border-radius: 50%;   
   object-fit: cover;    
   border: 1px solid #ddd;
+  display: block !important; /* 💡 어떤 상황에서도 무조건 보이도록 고정 */
 }
 
 .artist-info {
@@ -132,14 +133,26 @@ html, body {
     margin-bottom: 15px;
   }
   .coop-grid {
-    grid-template-columns: 1fr; /* 1열로 변경 */
-    gap: 15px;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
   .coop-container {
     padding: 10px;
   }
   .artist-info {
     font-size: 13px;
+  }
+
+  /* 💡 모바일에서 메인 포트폴리오 이미지만 정확하게 숨김 */
+  .image-box {
+    display: none !important;
+  }
+  .card-inner {
+    padding: 8px;
+    gap: 0px;
+  }
+  .artist-card {
+    border-radius: 12px;
   }
 }
 </style>
@@ -168,7 +181,7 @@ html, body {
           <img src="images/와토님.png" alt="WATO">
         </div>
         <div class="profile-box">
-          <img src="images/와토2.png" class="profile-icon" onerror="this.style.display='none'">
+          <img src="images/와토2.png" class="profile-icon">
           <div class="artist-info"><span class="artist-name">WATO</span> | LD ° 리깅 5만원 할인</div>
         </div>
       </div>
@@ -180,7 +193,7 @@ html, body {
           <img src="images/서우리님.png" alt="서우리">
         </div>
         <div class="profile-box">
-          <img src="images/서우리.png" class="profile-icon" onerror="this.style.display='none'">
+          <img src="images/서우리.png" class="profile-icon">
           <div class="artist-info"><span class="artist-name">서우리</span> | LD ° 리깅 5만원 할인</div>
         </div>
       </div>
@@ -192,7 +205,7 @@ html, body {
           <img src="images/개쥬님.png" alt="개쥬">
         </div>
         <div class="profile-box">
-          <img src="images/개쥬.png" class="profile-icon" onerror="this.style.display='none'">
+          <img src="images/개쥬.png" class="profile-icon">
           <div class="artist-info"><span class="artist-name">개쥬</span> <span class="private-text">° 잠시 비공개중입니다.</span></div>
         </div>
       </div>
@@ -204,7 +217,7 @@ html, body {
           <img src="images/카카님.png" alt="카카">
         </div>
         <div class="profile-box">
-          <img src="images/카카.png" class="profile-icon" onerror="this.style.display='none'">
+          <img src="images/카카.png" class="profile-icon">
           <div class="artist-info"><span class="artist-name">카카</span> | SD,LD ° 리깅 3,5만원 할인</div>
         </div>
       </div>
@@ -216,7 +229,7 @@ html, body {
           <img src="images/먀온님.png" alt="먀온">
         </div>
         <div class="profile-box">
-          <img src="images/먀온.png" class="profile-icon" onerror="this.style.display='none'">
+          <img src="images/먀온.png" class="profile-icon">
           <div class="artist-info"><span class="artist-name">먀온</span> <span class="private-text">° 잠시 비공개중입니다.</span></div>
         </div>
       </div>
@@ -228,7 +241,7 @@ html, body {
           <img src="images/양초님.png" alt="양초">
         </div>
         <div class="profile-box">
-          <img src="images/양초2.png" class="profile-icon" onerror="this.style.display='none'">
+          <img src="images/양초2.png" class="profile-icon">
           <div class="artist-info"><span class="artist-name">양초</span> | LD ° 리깅 5만원 할인</div>
         </div>
       </div>
@@ -240,7 +253,7 @@ html, body {
           <img src="images/다마님.png" alt="DAMA">
         </div>
         <div class="profile-box">
-          <img src="images/다마.png" class="profile-icon" onerror="this.style.display='none'">
+          <img src="images/다마.png" class="profile-icon">
           <div class="artist-info"><span class="artist-name">DAMA</span> | LD ° 리깅 5만원 할인</div>
         </div>
       </div>
@@ -252,7 +265,7 @@ html, body {
           <img src="images/혜야님.png" alt="혜야">
         </div>
         <div class="profile-box">
-          <img src="images/혜야.png" class="profile-icon" onerror="this.style.display='none'">
+          <img src="images/혜야.png" class="profile-icon">
           <div class="artist-info"><span class="artist-name">혜야</span> | SD ° 리깅 5만원 할인</div>
         </div>
       </div>
@@ -264,7 +277,7 @@ html, body {
           <img src="images/익명님.png" alt="익명">
         </div>
         <div class="profile-box">
-          <img src="images/익명.png" class="profile-icon" onerror="this.style.display='none'">
+          <img src="images/익명.png" class="profile-icon">
           <div class="artist-info"><span class="artist-name">익명</span> | SD ° 리깅 5만원 할인</div>
         </div>
       </div>
@@ -276,7 +289,7 @@ html, body {
           <img src="images/몬드님.png" alt="몬드">
         </div>
         <div class="profile-box">
-          <img src="images/몬드.png" class="profile-icon" onerror="this.style.display='none'">
+          <img src="images/몬드.png" class="profile-icon">
           <div class="artist-info"><span class="artist-name">몬드</span> | 월페이퍼 ° 리깅 3만원 할인 <span class="private-text">° 잠시 비공개중입니다.</span></div>
         </div>
       </div>
